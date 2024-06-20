@@ -33,6 +33,7 @@ class User extends AbstractResource
             RequestOptions::QUERY => [
                 'uid' => $uid,
             ],
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -50,6 +51,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'display-name' => $displayName,
             ], $data),
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
             AbstractSignature::SIGNATURE_OPTION => SignatureV2::class,
         ]);
     }
@@ -67,6 +69,7 @@ class User extends AbstractResource
             RequestOptions::QUERY => array_merge([
                 'uid' => $uid,
             ], $data),
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -82,6 +85,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'purge-data' => $purgeData,
             ],
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -99,6 +103,7 @@ class User extends AbstractResource
                 'key' => '',
                 'uid' => $uid,
             ], $data),
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -116,6 +121,7 @@ class User extends AbstractResource
                 'key' => '',
                 'access-key' => $accessKey,
             ], $data),
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -133,6 +139,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'subuser' => $subuser,
             ], $data),
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -150,6 +157,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'subuser' => $subuser,
             ], $data),
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -167,6 +175,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'subuser' => $subuser,
             ], $data),
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -183,6 +192,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'user-caps' => $userCaps,
             ],
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -199,6 +209,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'user-caps' => $userCaps,
             ],
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -215,6 +226,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'quota-type' => 'user',
             ],
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -235,6 +247,7 @@ class User extends AbstractResource
             ],
             RequestOptions::BODY => json_encode($quota),
             AbstractSignature::SIGNATURE_OPTION => SignatureV2::class,
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -251,6 +264,7 @@ class User extends AbstractResource
                 'uid' => $uid,
                 'quota-type' => 'bucket',
             ],
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -271,6 +285,7 @@ class User extends AbstractResource
             ],
             RequestOptions::BODY => json_encode($quota),
             AbstractSignature::SIGNATURE_OPTION => SignatureV2::class,
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 }

@@ -23,6 +23,7 @@ class Usage extends AbstractResource
     {
         return $this->api->get($this->endpoint, [
             RequestOptions::QUERY => $data,
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 
@@ -37,6 +38,7 @@ class Usage extends AbstractResource
     {
         return $this->api->delete($this->endpoint, [
             RequestOptions::QUERY => $data,
+            RequestOptions::HEADERS => $this->config->get('httpClientHeaders'),
         ]);
     }
 }
