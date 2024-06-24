@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use LBausch\CephRadosgwAdmin\ApiException;
 use LBausch\CephRadosgwAdmin\Client;
